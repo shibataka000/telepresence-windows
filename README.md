@@ -14,6 +14,14 @@ This repository enable to use Telepresence in following environment.
 - Docker Desktop
 
 ## Usage
+You can pull docker image by following command.
+
+```
+docker pull shibataka000/telepresence
+```
+
+You can run Telepresence by following command.
+
 ```bash
 docker run \
     --net=host \
