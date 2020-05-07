@@ -39,5 +39,5 @@ docker run \
 ```
 
 ## Notes
-- [saranrajj/telepresence-windows](https://github.com/saranrajj/telepresence-windows) use container method but it doesn't work in Docker Desktop, because Telepresence reports an error if the docker daemon is not local in telepresence 0.102 or later.
+- This repository use vpn-tcp method as Telepresence proxying method. [saranrajj/telepresence-windows](https://github.com/saranrajj/telepresence-windows) use container method but it doesn't work in Docker Desktop, because Telepresence reports an error if the docker daemon is not local in telepresence 0.102 or later.
 - You should download 3rd party library at private repository which your application use, because private repository can't be accessed from container inside.
