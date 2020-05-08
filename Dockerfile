@@ -22,6 +22,7 @@ RUN curl -s -o /tmp/go.tar.gz https://storage.googleapis.com/golang/go1.12.17.li
 RUN tar zxf /tmp/go.tar.gz -C /usr/local
 ENV PATH "$PATH:/usr/local/go/bin"
 ENV GOPATH /go
+ENV GO111MODULE on
 
 WORKDIR /go
 
