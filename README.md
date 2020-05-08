@@ -14,15 +14,16 @@ This repository enable to use Telepresence in following environment.
 - Docker Desktop
 
 ## Usage
-You can pull docker image by following command.
-
-```
-docker pull shibataka000/telepresence
-```
-
-You can run Telepresence by following command.
-
 ```bash
+# Pull docker image
+docker pull shibataka000/telepresence
+
+# Download packages
+cd $GOPATH/src/github.com/your_github_account/your_app_repository
+go mod download
+
+# Run Telepresence
+# `path_to_your_app_code.go` is path from `your_app_repository` directory.
 docker run \
     --net=host \
     --ipc=host \
