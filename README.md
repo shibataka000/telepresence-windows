@@ -34,11 +34,14 @@ docker run \
     -v $HOME/.aws/:/root/.aws \
     -v $HOME/.kube:/root/.kube \
     -v $GOPATH:/go \
+    -w /go/src/github.com/your_github_account/your_app_repository \
     --rm -it \
     shibataka000/telepresence \
-    --run go run /go/src/github.com/your_github_account/your_repository/path_to_your_code.go
+    --run go run path_to_your_app_code.go
 ```
 
 ## Notes
 - This repository use vpn-tcp method as Telepresence proxying method. [saranrajj/telepresence-windows](https://github.com/saranrajj/telepresence-windows) use container method but it doesn't work in Docker Desktop, because Telepresence reports an error if the docker daemon is not local in telepresence 0.102 or later.
-- You should download 3rd party library at private repository which your application use, because private repository can't be accessed from container inside.
+- You should download all of golang package which your application use in advance because of following reason.
+    - Private repository can't be accessed from container.
+    - Owner of packages which downloaded by Telepresence container become `root:root` and it prevent from development in outside of container.
