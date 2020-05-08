@@ -6,12 +6,12 @@ RUN apt-get update && apt-get install -y curl
 RUN curl -sL -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.16.9/bin/linux/amd64/kubectl
 RUN chmod +x /usr/local/bin/kubectl
 
-# Install telepresence
+# Install telepresence v0.105
 RUN curl -s https://packagecloud.io/install/repositories/datawireio/telepresence/script.deb.sh | bash
 RUN apt-get update && apt-get install -y \
   iptables \
   sudo \
-  telepresence
+  telepresence=0.105
 
 # Install awscli v1.18.53
 RUN apt-get update && apt-get install -y python3-pip
